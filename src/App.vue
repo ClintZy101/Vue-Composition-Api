@@ -6,6 +6,26 @@
   <router-view/>
 </template>
 
+<script>
+import store from '@/store'
+import { provide } from 'vue'
+
+export default {
+ setup () {
+  //  this will then be injected to child components using the inject method from 'vue'
+   provide('store', store)
+ }
+}
+
+// old way:
+// export default {
+//   provide: {
+//     store
+//   }
+// }
+</script>
+
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
